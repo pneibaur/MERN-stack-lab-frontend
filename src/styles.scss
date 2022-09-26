@@ -1,0 +1,37 @@
+* {
+    font-family: Helvetica;
+}
+// -----------------------------
+// VARIABLES
+// -----------------------------
+$maincolor: black;
+$contrastcolor: white;
+
+@mixin white-text-black-bg {
+    color: $contrastcolor;    
+    background-color: $maincolor;
+}
+// mixin and include work together in SASS
+@mixin black-text-white-bg {
+    color: $maincolor;
+    background-color: $contrastcolor;
+}
+
+// -----------------------------
+// HEADER
+// -----------------------------
+nav {
+    @include white-text-black-bg;
+    display: flex;
+    justify-content: flex-start;
+// this is a SASS compliling for something called nesting
+    a {
+        @include white-text-black-bg;
+        text-decoration: none;
+
+        div {
+            margin: 10px;
+            font-size: large;
+        }
+    }
+}
