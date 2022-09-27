@@ -40,3 +40,14 @@ img {
     max-width: 200px;
     height: auto;
 }
+
+section form {
+    margin: 10px;
+    padding: 1em;
+}
+form input {
+    padding: 1em;
+    margin: 0 1em;
+    border: none;
+    background-color: rgba(192, 192, 192, 0.552);
+}
