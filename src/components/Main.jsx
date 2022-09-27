@@ -23,7 +23,22 @@ const Main = (props) => {
         getPeople()
     }
 
-    // useEffect(() => getPeople(), [])
+    const updatePeople = async (person, id) => {
+        await fetch(URL + id, {
+            method: "PUT",
+            headers: {"Content-Type": "Application/json"},
+            body: JSON.stringify(person)
+        })
+        getPeople()
+    }
+
+    const deletePeople = async (id) => {
+        await fetch(URL+id, {
+            method: "DELETE"
+        })
+        getPeople()
+    }
+
     useEffect(() => {
         getPeople()
     }, [])
@@ -32,10 +47,22 @@ const Main = (props) => {
         <main>
             <Switch>
                 <Route exact path="/">
-                    <Index people={people} createPeople={createPeople} />
+                    <Index 
+                    people={people} 
+                    createPeople={createPeople} />
                 </Route>
+                {/* the "rp" stands for router props. we put this in the Route 
+                because we are passing down built in functions
+                that come with importing Route from React Router Dom.  */}
                 <Route path="/people/:id" render={(rp) => (
-                    <Show {...rp} />
+                    <Show 
+                    people={people} 
+                    updatePeople={updatePeople} 
+                    deletePeople={deletePeople} 
+                    // right here, we are sending down a whole bunch of built in
+                    // functions from "Route", such as the ".match" method.
+                    // we aren't importing "Route" on the show page, so we pass it here. 
+                    {...rp} />
                 )} />
             </Switch>
         </main>

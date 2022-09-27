@@ -26,9 +26,12 @@ const Index = (props) => {
     const loaded = () => {
         return props.people.map((person) => (
             <div key={person._id} className="person">
-                <Link to={`/people/${person._id}`}><h1>{person.name}</h1> </Link>
-                <img src={person.image} alt={person.name} />
+                <Link className='link' to={`/people/${person._id}`}>
+                    <h1>{person.name}</h1>
+                    <img src={person.image} alt={person.name} />
+                </Link>
                 <h3>{person.title}</h3>
+                {/* <hr /> */}
             </div>
         ))
     }
@@ -37,12 +40,16 @@ const Index = (props) => {
     }
     return (
         <section>
+            {/* the reason why we don't put the () at the end of handleSubmit is how React calls this function. 
+            If the () is at the end, it will repeatedly call that function and it will break your code. 
+            not including the () will tell JS and React that you want to call this fn ONLY on submit. */}
             <form onSubmit={handleSubmit}>
                 <input type="text" value={newForm.name} name="name" placeholder='name' onChange={handleChange} />
                 <input type="text" value={newForm.image} name="image" placeholder='image URL' onChange={handleChange} />
                 <input type="text" value={newForm.title} name="title" placeholder='title' onChange={handleChange} />
-                <input type="submit" value="Create Person" />
+                <input className='submitBtn' type="submit" value="Create Person" />
             </form>
+            <hr />
             {props.people ? loaded() : loading()}
         </section>
     )

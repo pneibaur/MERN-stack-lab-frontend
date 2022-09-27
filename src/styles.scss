@@ -36,18 +36,60 @@ nav {
     }
 }
 
-img {
-    max-width: 200px;
-    height: auto;
+// -----------------------------
+// FORM
+// -----------------------------
+section, div {
+    form {
+        input {
+            @include white-text-black-bg;
+            padding: 10px;
+            font-size: 1.1em;
+            margin: 10px;
+            border: none;
+            transition-duration: .3s;
+
+            &:hover {
+                @include black-text-white-bg;
+            }
+            &:focus {
+                @include black-text-white-bg;
+            }
+        }
+    }
 }
 
-section form {
-    margin: 10px;
-    padding: 1em;
-}
-form input {
-    padding: 1em;
-    margin: 0 1em;
+// -----------------------------
+// BUTTON
+// -----------------------------
+button#delete {
+    @include white-text-black-bg;
+    display: block;
+    margin: auto;
+    font-size: 1.3em;
+    padding: 10px;
     border: none;
-    background-color: rgba(192, 192, 192, 0.552);
+    transition-duration: .3s;
+    &:hover {
+        @include black-text-white-bg;
+    }
+}
+
+// -----------------------------
+// IMAGES
+// -----------------------------
+img {
+    width: 300px;
+    height: auto;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+hr {
+    width: 50%;
+}
+
+.link {
+    text-decoration: inherit;
+    color: inherit;
 }
