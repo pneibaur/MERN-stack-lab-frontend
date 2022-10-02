@@ -4,6 +4,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
+import About from './pages/About';
 import Home from './pages/Home';
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path="/people">
           <Main/>
+        </Route>
+        <Route path="/about">
+          <About/>
         </Route>
       </Switch>
       <Footer/>
