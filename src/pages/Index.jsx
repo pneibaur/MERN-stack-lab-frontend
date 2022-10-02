@@ -31,7 +31,6 @@ const Index = (props) => {
                     <img src={person.image} alt={person.name} />
                 </Link>
                 <h3>{person.title}</h3>
-                <hr />
             </div>
         ))
     }

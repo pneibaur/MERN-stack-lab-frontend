@@ -58,6 +58,7 @@ nav {
     bottom: 0;
     right: 0;
     background-color: #00000064;
+    padding: 1em;
     a {
         text-decoration: none;
         color: #c2c6e8;
@@ -83,6 +84,8 @@ section,
     }
 
     form {
+        margin-bottom: 5em;
+
         input {
             @include white-text-black-bg;
             padding: 10px;
@@ -90,7 +93,6 @@ section,
             margin: 10px;
             border: none;
             transition-duration: .4s;
-            margin-bottom: 5em;
 
             &:hover {
                 @include black-test-white-bg;
@@ -147,6 +149,7 @@ hr {
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 5em;
 }
 
 .person {
