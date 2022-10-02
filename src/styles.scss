@@ -2,7 +2,7 @@
 // VARIABLES
 // --------------------------
 $maincolor: rgb(65, 65, 65);
-$contrastcolor: white;
+$contrastcolor: #c2c6e8;
 
 @mixin white-text-black-bg {
     color: $contrastcolor;
@@ -13,11 +13,17 @@ $contrastcolor: white;
     color: $maincolor;
     background-color: $contrastcolor;
 }
-
+html,body {
+    min-height: 100%;
+}
 body {
     margin: 0;
-    background-color: rgb(173, 62, 62);
-    color: white;
+    background-color: #4532d1;
+    background: linear-gradient(#4532d1, #010209);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #c2c6e8;
     font-family: "Helvetica";
 }
 
@@ -30,14 +36,34 @@ nav {
     display: flex;
     justify-content: flex-start;
     margin: 0;
+    padding-left: 1em;
 
     a {
         @include white-text-black-bg;
+        transition-duration: .4s;
+        &:hover {
+            @include black-test-white-bg;
+        }
 
         div {
             margin: 10px;
             font-size: large;
-            margin-left: 3em;
+        }
+    }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #00000064;
+    a {
+        text-decoration: none;
+        color: #c2c6e8;
+        transition-duration: .4s;
+        &:hover {
+            @include white-text-black-bg;
         }
     }
 }
@@ -64,6 +90,11 @@ section,
             margin: 10px;
             border: none;
             transition-duration: .4s;
+            margin-bottom: 5em;
+
+            &:hover {
+                @include black-test-white-bg;
+            }
 
             &[type="submit"]:hover {
                 @include black-test-white-bg;
@@ -93,10 +124,11 @@ button {
 // IMAGES
 // -----------------------------
 img {
-    width: 300px;
+    width: 200px;
     height: auto;
     border-radius: 50px;
     object-fit: cover;
+    box-shadow: 0 0 10px 1px #c2c6e8;
 }
 
 hr {
@@ -106,4 +138,17 @@ hr {
 .link {
     text-decoration: inherit;
     color: inherit;
+}
+
+.charDisplay {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.person {
+    margin: 0 3em;
 }

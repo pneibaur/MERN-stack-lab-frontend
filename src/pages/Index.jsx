@@ -50,7 +50,9 @@ const Index = (props) => {
                 <input className='submitBtn' type="submit" value="Create Person" />
             </form>
             <hr />
-            {props.people ? loaded() : loading()}
+            <div className="charDisplay">
+                {props.people ? loaded() : loading()}
+            </div>
         </section>
     )
 }

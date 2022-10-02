@@ -21,12 +21,12 @@ const Show = (props) => {
     props.updatePeople(editForm, person._id)
     // this .history method is being passed down from the "rp" from the Route (similar to .match)
     // this mimicks the browser back button!
-    props.history.push("/")
+    props.history.push("/people")
   }
 
   const removePerson = () => {
     props.deletePeople(person._id)
-    props.history.push("/")
+    props.history.push("/people")
   }
 
   return (
@@ -36,7 +36,7 @@ const Show = (props) => {
       <img src={person.image} alt={person.name} />
       <span>
         <button className='submitBtn' id='delete' onClick={removePerson}>DELETE</button>
-        <Link className='link' to="/">
+        <Link className='link' to="/people">
           <button className='submitBtn' id='back'>BACK</button>
         </Link>
       </span>

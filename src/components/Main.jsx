@@ -46,7 +46,7 @@ const Main = (props) => {
     return (
         <main>
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/people">
                     <Index 
                     people={people} 
                     createPeople={createPeople} />
